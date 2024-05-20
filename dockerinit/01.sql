@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS `yii2advanced`;
+CREATE DATABASE IF NOT EXISTS `yii2advanced_test`;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';

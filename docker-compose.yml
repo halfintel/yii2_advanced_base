@@ -1,0 +1,52 @@
+version: '3.2'
+
+services:
+
+  frontend:
+    build: frontend
+    container_name: study_cards-frontend-1
+    ports:
+      - 20083:80
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
+
+  backend:
+    build: backend
+    container_name: study_cards-backend-1
+    ports:
+      - 21083:80
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
+
+  mysql:
+    image: mysql:5.7
+    container_name: study_cards-mysql-1
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_USER=yii2advanced
+      - MYSQL_PASSWORD=secret
+    ports:
+      - '3303:3306'
+    volumes:
+      - ./dockerinit:/docker-entrypoint-initdb.d
+
+  phpmyadmin:
+      image: phpmyadmin
+      container_name: study_cards-phpmyadmin-1
+      restart: always
+      ports:
+        - 9003:80
+      environment:
+        - PMA_ARBITRARY=1
+        - PMA_HOST=study_cards-mysql-1
+
+volumes:
+  db:
+    driver: local

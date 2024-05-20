@@ -1,0 +1,8 @@
+suite_namespace: console\tests\unit
+actor: UnitTester
+bootstrap: false
+modules:
+    enabled:
+        -   Yii2:
+                part: [ orm, email, fixtures ]
+        - Asserts

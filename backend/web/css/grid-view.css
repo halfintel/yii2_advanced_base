@@ -1,0 +1,62 @@
+/** This is styles for yii\grid\GridView */
+
+.grid-view tbody td {
+    padding: 0 .75rem;
+}
+
+/* Default columns width */
+.grid-view tbody td {
+    min-width: 81px; /* Minimum width for columns with "(not set)" value */
+}
+
+.grid-view tbody td:first-child {
+    min-width: 30px;
+    width: 30px;
+}
+
+.grid-view .modalWidgetButton {
+    padding: 0 10px;
+}
+
+.grid-view.hide_images img {
+    display: none !important;
+}
+
+/*
+Usage - add options with needed class to column:
+[
+    'attribute' => 'created_at',
+    'options' => ['class' => 'datetime'],
+],
+*/
+.grid-view .w40 {
+    width: 40px;
+}
+
+.grid-view .w80 {
+    width: 80px;
+}
+
+.grid-view .w100 {
+    width: 100px;
+}
+
+.grid-view .w200 {
+    width: 200px;
+}
+
+.grid-view .w300 {
+    width: 300px;
+}
+
+.grid-view .w400 {
+    width: 400px;
+}
+
+.grid-view .w500 {
+    width: 500px;
+}
+
+.grid-view .datetime {
+    width: 160px;
+}

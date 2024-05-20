@@ -1,0 +1,75 @@
+@import "grid-view.css";
+
+:root {
+    --bg-error: #f77;
+}
+
+html{
+    font-size: 100% !important;
+}
+
+tfoot {
+    font-weight: bold;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.text-success {
+    color: var(--success);
+}
+
+.text-error {
+    color: var(--danger);
+}
+
+.bg-error {
+    background-color: var(--bg-error) !important;
+}
+
+
+.pagination li {
+    margin-right: 5px;
+    background-color: #28a745;
+    border-radius: 2px;
+}
+
+.pagination li:hover {
+    margin-right: 5px;
+    background-color: #218838;
+}
+
+.pagination li.active {
+    background-color: white;
+    color: #212529;
+}
+
+.pagination li.active a,
+.pagination li.active:hover a {
+    color: #212529;
+}
+
+.pagination li.disabled {
+    background-color: grey;
+}
+
+
+.pagination a,
+.pagination span {
+    display: block;
+    min-width: 45px;
+    min-height: 45px;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+.pagination li:hover a {
+    color: #fff;
+}
+
+.ml-15 {
+    margin-left: 15px;
+}
